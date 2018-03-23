@@ -90,7 +90,8 @@ def download_img(driver, searchtext="car", count_argv=10, download_path="./downl
         #urllib.urlretrieve(img_url , "%s/img%s%s"%(download_path,str(x),img_type))
         f = open(download_path+"/"+searchtext.replace(" ", "_")+"/"+searchtext.replace(" ", "_")+str(count)+"."+img_type, "wb")
         req = urllib.request.Request(img_url, headers=headers)
-        raw_img = urllib.request.urlopen(req).read()
+        timeout = 1
+        raw_img = urllib.request.urlopen(req, timeout = 1).read()
         print("download count : %s \nurl : %s"%(count, img_url))
         f.write(raw_img)
         f.close
@@ -105,10 +106,10 @@ def download_img(driver, searchtext="car", count_argv=10, download_path="./downl
   print("total downloads : %s"%count)
   #url = "https://www.google.co.in/search?q=%s&source=lnms&tbm=isch%s"%("tags","")
   #driver.get(url)
-#driver = open_browser()
-#images = fetch_links(driver, searchtext="car", count_argv=100, download_path="./download", tags = 'g_6:batman')
-#download_img(driver, searchtext="car", count_argv=100, download_path="./download", tags = 'g_6:batman' ,images = images)
-#close_browser(driver)
+driver = open_browser()
+images = fetch_links(driver, searchtext="car", count_argv=100, download_path="./download", tags = 'g_9:rare')
+download_img(driver, searchtext="car", count_argv=100, download_path="./download", tags = 'g_9:rare' ,images = images)
+close_browser(driver)
 
 
 
