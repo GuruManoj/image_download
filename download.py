@@ -157,25 +157,20 @@ def mul_tags(searchtext, download_path="./download", all_tags=[None], tag_list=[
     download_img(driver, searchtext=searchtext, start=start_list[i], count_argv=count_list[i], download_path=download_path, tags = all_tags[tag_no],images = images)
 
 
+def test():
+  '''
+  enable the below to execuite this functions
+  '''
+  all_tags = get_all_tags(searchtext = "computer")
+  print(all_tags)
+  driver = open_browser()
+  #images = fetch_links(driver, searchtext="car", start=100, count_argv=10, download_path="./download", tags = None)
+  #download_img(driver, searchtext="car", start=100, count_argv=10, download_path="./download", tags = None,images = images)
+  tag_list = [0,1,5,6]
+  start_list = [100,100,100,100]
+  count_list = [10,10,10,10]
+  mul_tags(searchtext="computer",download_path="./download",all_tags=all_tags,tag_list=tag_list,start_list=start_list,count_list=count_list)
+  close_browser(driver)
 
 
-
-
-'''
-enable the below to execuite this functions
-'''
-all_tags = get_all_tags(searchtext = "car")
-driver = open_browser()
-#images = fetch_links(driver, searchtext="car", start=100, count_argv=10, download_path="./download", tags = None)
-#download_img(driver, searchtext="car", start=100, count_argv=10, download_path="./download", tags = None,images = images)
-tag_list = [0,1,5,6]
-start_list = [100,100,100,100]
-count_list = [10,10,10,10]
-
-mul_tags(searchtext="car",download_path="./download",all_tags=all_tags,tag_list=tag_list,start_list=start_list,count_list=count_list)
-
-
-close_browser(driver)
-
-
-
+#def test()
