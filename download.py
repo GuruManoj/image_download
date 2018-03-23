@@ -161,7 +161,8 @@ def test():
   '''
   enable the below to execuite this functions
   '''
-  all_tags = get_all_tags(searchtext = "computer")
+  searchtext = "computer"
+  all_tags = get_all_tags(searchtext = searchtext)
   print(all_tags)
   driver = open_browser()
   #images = fetch_links(driver, searchtext="car", start=100, count_argv=10, download_path="./download", tags = None)
@@ -169,7 +170,7 @@ def test():
   tag_list = [0,1,5,6]
   start_list = [100,100,100,100]
   count_list = [10,10,10,10]
-  mul_tags(searchtext="computer",download_path="./download",all_tags=all_tags,tag_list=tag_list,start_list=start_list,count_list=count_list)
+  mul_tags(searchtext=searchtext,download_path="./download",all_tags=all_tags,tag_list=tag_list,start_list=start_list,count_list=count_list)
   close_browser(driver)
 
 
